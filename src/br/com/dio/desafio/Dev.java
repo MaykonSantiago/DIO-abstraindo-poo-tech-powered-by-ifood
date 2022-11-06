@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class Dev {
     private String nome;
+    private double xp;
     Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
@@ -19,6 +20,7 @@ public class Dev {
         if(conteudo.isPresent()){
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
+            this.xp = calcularTotalXp();
         } else {
             System.out.println("Você não está matriculado em nenhum conteúdo!");
         }
@@ -37,6 +39,14 @@ public class Dev {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getXp() {
+        return xp;
+    }
+
+    public void setXp(double xp) {
+        this.xp = xp;
     }
 
     public Set<Conteudo> getConteudosInscritos() {
@@ -92,7 +102,14 @@ public class Dev {
         return true;
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "Dev {" + '\n' +
+        "    Nome= " + nome + ",\n" +
+        "    XP= " + xp + ",\n" +
+        "    Conteúdos inscritos= " + conteudosInscritos + "\n" +
+        "    Conteúdos concluídos= " + conteudosConcluidos + "\n" +
+        "}";
+    }
     
 }
