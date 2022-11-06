@@ -11,9 +11,9 @@ public class Bootcamp {
     private final LocalDate dataInicial = LocalDate.now();
     private final LocalDate dataFinal = dataInicial.plusDays(45);
 
-    private Set<Dev> inscritos = new HashSet<>();
+    private Set<Dev> devInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
-    
+
     public String getNome() {
         return nome;
     }
@@ -32,11 +32,11 @@ public class Bootcamp {
     public LocalDate getDataFinal() {
         return dataFinal;
     }
-    public Set<Dev> getInscritos() {
-        return inscritos;
+    public Set<Dev> getDevInscritos() {
+        return devInscritos;
     }
-    public void setInscritos(Set<Dev> inscritos) {
-        this.inscritos = inscritos;
+    public void setDevInscritos(Set<Dev> devInscritos) {
+        this.devInscritos = devInscritos;
     }
     public Set<Conteudo> getConteudos() {
         return conteudos;
@@ -52,7 +52,7 @@ public class Bootcamp {
         result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
         result = prime * result + ((dataInicial == null) ? 0 : dataInicial.hashCode());
         result = prime * result + ((dataFinal == null) ? 0 : dataFinal.hashCode());
-        result = prime * result + ((inscritos == null) ? 0 : inscritos.hashCode());
+        result = prime * result + ((devInscritos == null) ? 0 : devInscritos.hashCode());
         result = prime * result + ((conteudos == null) ? 0 : conteudos.hashCode());
         return result;
     }
@@ -85,10 +85,10 @@ public class Bootcamp {
                 return false;
         } else if (!dataFinal.equals(other.dataFinal))
             return false;
-        if (inscritos == null) {
-            if (other.inscritos != null)
+        if (devInscritos == null) {
+            if (other.devInscritos != null)
                 return false;
-        } else if (!inscritos.equals(other.inscritos))
+        } else if (!devInscritos.equals(other.devInscritos))
             return false;
         if (conteudos == null) {
             if (other.conteudos != null)
